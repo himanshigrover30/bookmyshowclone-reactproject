@@ -25,6 +25,9 @@ function NavSm() {
 function NavMd() {
   return (
     <>
+      <div className="w-10 h-10">
+        <img src="" alt="logo" className="w-full h-full" />
+      </div>
       <div className="w-full flex items-center gap-3 bg-white px-3 py-1 rounded-md">
         <BiSearch />
         <input
@@ -63,9 +66,20 @@ function NavLg() {
 const Navbar = () => {
   // return
   return (
-    <>
-      <div>Navbar</div>;
-    </>
+    <nav className="bg-darkBackground-700 px-4 py-3">
+      {/* Small Screen Nevbar */}
+      <div class="md:hidden">
+        <NavSm />
+      </div>
+      {/*  Medium screen Navbar*/}
+      <div className="hidden md:flex lg:hidden">
+        <NavMd />
+      </div>
+      {/* Large Screen Navbar */}
+      <div className="hidden md:hidden lg:flex">
+        <NavLg />
+      </div>
+    </nav>
   );
 };
 
