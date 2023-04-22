@@ -5,8 +5,9 @@ import MovieLayoutHoc from "../layout/Movie.layout";
 
 const MoviePage = () => {
   const { id } = useParams();
-  const [cast, setCast] = useState();
-  const [similarMovies, setSimilarMovies] = useState();
+  const [cast, setCast] = useState([]);
+  const [similarMovies, setSimilarMovies] = useState([]);
+  const [recommendedMovies, setRecommendedMovies] = useState([]);
 
   // Cast
   useEffect(() => {
@@ -20,10 +21,21 @@ const MoviePage = () => {
   useEffect(() => {
     const requestsimilarMovies = async () => {
       const getsimilarMovies = await axios.get(`/movie/${id}/similar`);
-      setSimilarMovies(getsimilarMovies.data.result);
+      setSimilarMovies(getsimilarMovies.data.results);
     };
     requestsimilarMovies();
   }, [id]);
+
+  useEffect(() => {
+    const requestRecommendedMovies = async () => {
+      const getRecommendedMovies = await axios.get(
+        `/movie/${id}/recommendations`
+      );
+      setRecommendedMovies(getRecommendedMovies.data.results);
+    };
+    requestRecommendedMovies();
+  }, [id]);
+
   return <div>MoviePage</div>;
 };
 
