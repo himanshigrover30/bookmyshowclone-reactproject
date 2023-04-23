@@ -7,6 +7,7 @@ import MovieLayoutHoc from "../layout/Movie.layout";
 import Slider from "react-slick";
 import { FaCcVisa, FaCcApplePay } from "react-icons/fa";
 import PosterSlider from "../components/PosterSlider/PosterSlider.Component";
+import MovieHero from "../components/MovieHero/MovieHero.Component";
 
 const MoviePage = () => {
   const { id } = useParams();
@@ -54,6 +55,7 @@ const MoviePage = () => {
   const settings = {};
   return (
     <>
+      <MovieHero />
       <div className="my-12 container px-4 lg-ml-20 lg:w-2/1">
         <div className="flex flex-col items-start gap-3">
           <h1 className="text-gray-800 font-bold  gap-3 text-2xl">
