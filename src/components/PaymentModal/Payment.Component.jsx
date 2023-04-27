@@ -6,7 +6,22 @@ const PaymentModal = ({ setIsOpen, isOpen, price }) => {
   const closeModal = () => {
     setIsOpen(false);
   };
-  const launchRazorPay = () => {};
+  const launchRazorPay = () => {
+    let options = {
+      key: "rzp_test_trSZbjvDJSItP3", //this key is of rezarpay key and need to be personal
+      amount: price * 100,
+      currency: "INR",
+      name: "Book My Show Clone",
+      description: "Movie Purchase or rent",
+      handler: () => {
+        setIsOpen(false);
+        alert("Payment Successful");
+      },
+      theme: { color: "#c4242d" },
+    };
+    let razorPay = window.RazorPay(options);
+    razorPay.open();
+  };
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
