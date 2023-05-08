@@ -45,8 +45,8 @@ const HeroCarousel = () => {
     infinite: true,
     speed: 500,
     slideToScroll: 1,
-    nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     autoplay: true,
     autoplaySpeed: 4000,
     cssEase: "linear",
@@ -57,8 +57,8 @@ const HeroCarousel = () => {
     infinite: true,
     speed: 500,
     slideToScroll: 1,
-    nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
   };
   return (
     <>
