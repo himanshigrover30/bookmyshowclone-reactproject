@@ -40,28 +40,23 @@ const HeroCarousel = () => {
     },
   ]);
   const settingsLG = {
-    dots: true,
     arrows: true,
+    slidesToShow: 1,
     infinite: true,
     speed: 500,
     slideToScroll: 1,
-    slidesToShow: 3,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    cssEase: "linear",
   };
   const settings = {
-    dots: true,
     arrows: true,
+    slidesToShow: 1,
     infinite: true,
     speed: 500,
     slideToScroll: 1,
-    slidesToShow: 3,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
   };
@@ -69,28 +64,28 @@ const HeroCarousel = () => {
     <>
       <div className="lg:hidden">
         <HeroSlider {...settings}>
-          {images.map((image) => {
-            <div className="w-full h-56 md:h-80 py-3">
+          {images.map((images, index) => (
+            <div className="w-full h-56 md:h-80 py-3" key={index}>
               <img
-                src={`https://image.tmbd.org/t/p/original${images.backdrop_path}`}
+                src={`https://image.tmdb.org/t/p/original${images.backdrop_path}`}
                 alt="Hero Banner"
-                className=" w-full h-full rounded-md object-cover"
+                className="w-full h-full rounded-md object-cover"
               />
-            </div>;
-          })}
+            </div>
+          ))}
         </HeroSlider>
       </div>
       <div className="hidden lg:block">
         <HeroSlider {...settingsLG}>
-          {images.map((image) => {
-            <div className="w-full h-96 px-2 py-3">
+          {images.map((images, index) => (
+            <div className="w-full h-96 px-2 py-3" key={index}>
               <img
-                src={`https://image.tmbd.org/t/p/original${images.backdrop_path}`}
+                src={`https://image.tmdb.org/t/p/original${images.backdrop_path}`}
                 alt="Hero Banner"
-                className=" w-full h-full rounded-md object-cover"
+                className="w-full h-full rounded-md object-cover"
               />
-            </div>;
-          })}
+            </div>
+          ))}
         </HeroSlider>
       </div>
     </>
