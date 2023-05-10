@@ -87,5 +87,5 @@ const HomePage = () => {
     </>
   );
 };
-
+// project completed
 export default DefaultLayoutHoc(HomePage);
